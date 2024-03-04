@@ -42,13 +42,15 @@
 
       function CalculateTotal() {
         const inputElement = document.querySelector('.js-cost-input')
-        let cost = Number(inputElement.value);
+        // convert the Number to cents by * 100
+        let cost = Number(inputElement.value) * 100;
 
-        if (cost < 40) {
-          cost += 10;
+        if (cost < 4000) {
+          cost += 1000;
         }
 
-        document.querySelector('.js-total-cost').innerHTML = `$${cost}`
+        // Convert back to dollars at the end.
+        document.querySelector('.js-total-cost').innerHTML = `$${cost / 100}`
       }
       
       function subscribe() {
