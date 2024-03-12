@@ -67,6 +67,9 @@
 
     <p class="js-total-cost"></p>
 
+    <!-- Create an element to display the error message. -->
+    <p class="js-error-message error-message"></p>
+
     <script>
       // String(25)
       // console.log('25' - 5);
@@ -89,6 +92,19 @@
       function CalculateTotal() {
         const inputElement = document.querySelector('.js-cost-input')
         let cost = Number(inputElement.value);
+
+        // First reset all previous message.
+        document.querySelector('.js-total-cost').innerHTML = '';
+        document.querySelector('.js-error-message').innerHTML = '';
+
+        if (cost < 0) {
+          document.querySelector('.js-error-message').innerHTML = 'Error: cost cannot be less than $0';
+          // If we display an error, we can use return to
+          // end this function immediately. This is called
+          // an "early return" and it makes the code cleaner
+          // because it reduces nesting / indents.
+          return;
+        }
 
         if (cost < 40) {
           cost += 10;
