@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <button>Hello</button>
+  <button class="world">World</button> -->
+
+  <!-- <button class="head" onclick="heads()">heads</button>
+  <button class="tail" onclick="tails()">tails</button>
+
+  <p></p> -->
+
+  <input class="name" type="text" onkeydown="
+    if (event.key === 'Enter') {
+      show();
+    }
+  ">
+  <button onclick="show()">Submit</button>
+
+  <p class="para"></p>
+  
+  <script>
+    // const btn = document.querySelector('button');
+    // console.log(btn);
+
+    // const btn = document.querySelector('.world');
+    // btn.textContent = 'Done';
+    /*
+    function heads() {
+      const para = document.querySelector('p');
+      para.innerText = 'You chose: heads'
+    }
+
+    function tails() {
+      const para = document.querySelector('p');
+      para.innerText = 'You chose: tails'
+    }
+    */
+
+    function show() {
+      const userName = document.querySelector('.name');
+      const para = document.querySelector('.para');
+
+      para.textContent = `Your name is: ${userName.value}`
+    }
+
+  </script>
+</body>
+</html>
